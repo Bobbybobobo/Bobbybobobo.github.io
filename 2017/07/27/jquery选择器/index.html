@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 理想三旬</title>
+  <title>jquery选择器 | 理想三旬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="理想三旬">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="jquery">
+<meta name="keywords" content="jquery 选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery选择器">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/jquery选择器/index.html">
 <meta property="og:site_name" content="理想三旬">
+<meta property="og:description" content="jquery">
+<meta property="og:updated_time" content="2017-07-27T13:54:06.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理想三旬">
+<meta name="twitter:title" content="jquery选择器">
+<meta name="twitter:description" content="jquery">
   
     <link rel="alternative" href="/atom.xml" title="理想三旬" type="application/atom+xml">
   
@@ -149,112 +154,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jquery选择器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/DOM-BOM/" class="archive-article-date">
-  	<time datetime="2017-07-27T14:03:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/DOM-BOM/">DOM/BOM</a>
+    <h1 class="article-title" itemprop="name">
+      jquery选择器
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">BOM DOM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/面向对象/" class="archive-article-date">
-  	<time datetime="2017-07-27T13:55:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/面向对象/">面向对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">面向对象 原型 原型链 this关键字 闭包 json字符串转换 预解析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/jquery选择器/" class="archive-article-date">
+        
+        <a href="/2017/07/27/jquery选择器/" class="archive-article-date">
   	<time datetime="2017-07-27T13:46:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/jquery选择器/">jquery选择器</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a><strong>jquery</strong></h2><a id="more"></a>
+<ol>
+<li><h3 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h3></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>CSS</th>
+<th>JQuery</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接子元素选择器</td>
+<td>parent&gt;child</td>
+<td><code>$(&#39;parent&gt;child&#39;)</code></td>
+<td>选择parent元素下的第一级子元素child</td>
+</tr>
+<tr>
+<td>后代元素选择器(空格)</td>
+<td>ancestor(空格)descendant</td>
+<td><code>$(&#39;ancestor descendant&#39;)</code></td>
+<td>选择ancestor元素下的所有子孙元素descendant</td>
+</tr>
+<tr>
+<td>直接相邻兄弟元素选择器</td>
+<td>prev+next</td>
+<td><code>$(&#39;prev+next&#39;)</code></td>
+<td>选择紧邻prev选择器之后的兄弟元素next</td>
+</tr>
+<tr>
+<td>一般相邻元素选择器</td>
+<td>prev~siblings</td>
+<td><code>$(&#39;prev~siblings&#39;)</code></td>
+<td>选择prev选择器之后的所有兄弟元素</td>
+</tr>
+<tr>
+<td>代码示例</td>
+<td><code>.left &gt; div{background-color: #ccc;}</code></td>
+<td><code>$(&#39;.left &gt; div&#39;).css(&quot;backgroundColor&quot;, &quot;#CCC&quot;);</code></td>
+<td>将.left 下的第一级子元素背景色设置为#CCC</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.过滤选择器</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>CSS</th>
+<th>JQuery</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:first</td>
+<td>无此用法</td>
+<td>$(‘E:first’)</td>
+<td>选择E元素(集合)中的第一个E元素</td>
+</tr>
+<tr>
+<td>:last</td>
+<td>无此用法</td>
+<td>$(‘E:last’)</td>
+<td>选择E元素(集合)中的最后一个E元素</td>
+</tr>
+<tr>
+<td>:even</td>
+<td>无此用法</td>
+<td>$(‘E:even’)</td>
+<td>选择E元素(集合)中的索引为偶数的E元素，n从0开始</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td>无此用法</td>
+<td>$(‘E:odd’)</td>
+<td>选择E元素(集合)中的索引为奇数的E元素，n从0开始</td>
+</tr>
+<tr>
+<td>:eq(n)</td>
+<td>无此用法</td>
+<td>$(‘E:eq(n)’)</td>
+<td>选择E元素(集合)中的索引等于n的E元素,n从0开始</td>
+</tr>
+<tr>
+<td>:lt(n)</td>
+<td>无此用法</td>
+<td>$(“E:lt(n)”)</td>
+<td>选择E元素(集合)中索引小于n的E元素,n从0开始</td>
+</tr>
+<tr>
+<td>:gt(n)</td>
+<td>无此用法</td>
+<td>$(“E:gt(n)”)</td>
+<td>选择E元素(集合)中索引大于n的E元素,n从0开始</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>:first-child</th>
+<th>匹配的元素是其父节点的第一个子元素。注意:这与“:first”不同</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:last-child</td>
+<td>匹配的元素是其父节点的最后一个子元素。注意:这与“:last”不同</td>
+</tr>
+<tr>
+<td>:nth-child(n)</td>
+<td>匹配的元素是其父节点的第n个子元素。。可以是数值、单词even,单词odd或计算公式。 使用“:nth-child(even)”来选取那些在其父节点的子元素中排行第2或第4等序号的元素。使用“:nth-child(odd)”来选取那 些在其父节点的子元素中排行第1、第3等序号的元素。更常见的情况是，n是xn或x n+y这种计算公式，其中x和y是整数，n是字面量n。因此可以用nth-child(3n+1)来选取第1个、第4个、第7个等元素。注意该过滤器的序号是从1开始的，因此如果一个元素是其父节点的第一个子元素，会认为它是奇数元素，匹配的是3n+1，而不是3n。要和“:even以及“:odd”过滤器区分开来，后者匹配的序号是从0开始的。</td>
+</tr>
+<tr>
+<td>:only-child</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>​</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -266,133 +339,113 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/27/jquery选择器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/es6s属性/" class="archive-article-date">
-  	<time datetime="2017-07-27T13:37:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/07/27/面向对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          面向对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/27/es6s属性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">es6s属性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/es6s属性/">es6s属性</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">es6 基础 属性</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/下拉更多实现/" class="archive-article-date">
-  	<time datetime="2017-07-27T13:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/下拉更多实现/">下拉更多实现</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">下拉更多 原理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/lazyload/" class="archive-article-date">
-  	<time datetime="2017-07-27T13:21:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/lazyload/">lazyload</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">懒加载 原理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -415,8 +468,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>理想三旬</title>
+  <title>下拉更多实现 | 理想三旬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="es6属性基础教学，30分钟包会ES6基础智商划重点在实际开发中，ES6已经非常普及了。掌握ES6的知识变成了一种必须。尽管我们在使用时仍然需要经过babel编译。 ES6彻底改变了前端的编码风格，可以说对于前端的影响非常巨大。值得高兴的是，如果你熟悉ES5，学习ES6并不需要花费太多的时间就可以掌握，因为常用的基础语法并不多，花少量的时间，就可以开始我们的ES6之旅了。 这篇文章不会详细的告诉你">
+  <meta name="description" content="项目的一个前端页面展示已购买商品时，要求能下拉加载更多。花了点时间研究这个功能，以前没做过。 首先需要给div加scroll事件，监听滚动条滚动动作。那何时触发加载动作呢？当滚动条滚到底的时候。如何判断滚动条滚到底呢？  当滚动条的高度加上滚动条到div顶部的高度等于div的可滚动高度时，说明滚动条到底部了。公式如下。 1this.scrollHeight &amp;lt;= $(this).scrol">
+<meta name="keywords" content="下拉更多 原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理想三旬">
-<meta property="og:url" content="http://yoursite.com/2017/07/27/es6/index.html">
+<meta property="og:title" content="下拉更多实现">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/下拉更多实现/index.html">
 <meta property="og:site_name" content="理想三旬">
-<meta property="og:description" content="es6属性基础教学，30分钟包会ES6基础智商划重点在实际开发中，ES6已经非常普及了。掌握ES6的知识变成了一种必须。尽管我们在使用时仍然需要经过babel编译。 ES6彻底改变了前端的编码风格，可以说对于前端的影响非常巨大。值得高兴的是，如果你熟悉ES5，学习ES6并不需要花费太多的时间就可以掌握，因为常用的基础语法并不多，花少量的时间，就可以开始我们的ES6之旅了。 这篇文章不会详细的告诉你">
-<meta property="og:updated_time" content="2017-07-27T01:07:00.994Z">
+<meta property="og:description" content="项目的一个前端页面展示已购买商品时，要求能下拉加载更多。花了点时间研究这个功能，以前没做过。 首先需要给div加scroll事件，监听滚动条滚动动作。那何时触发加载动作呢？当滚动条滚到底的时候。如何判断滚动条滚到底呢？  当滚动条的高度加上滚动条到div顶部的高度等于div的可滚动高度时，说明滚动条到底部了。公式如下。 1this.scrollHeight &amp;lt;= $(this).scrol">
+<meta property="og:updated_time" content="2017-07-27T13:42:44.434Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理想三旬">
-<meta name="twitter:description" content="es6属性基础教学，30分钟包会ES6基础智商划重点在实际开发中，ES6已经非常普及了。掌握ES6的知识变成了一种必须。尽管我们在使用时仍然需要经过babel编译。 ES6彻底改变了前端的编码风格，可以说对于前端的影响非常巨大。值得高兴的是，如果你熟悉ES5，学习ES6并不需要花费太多的时间就可以掌握，因为常用的基础语法并不多，花少量的时间，就可以开始我们的ES6之旅了。 这篇文章不会详细的告诉你">
+<meta name="twitter:title" content="下拉更多实现">
+<meta name="twitter:description" content="项目的一个前端页面展示已购买商品时，要求能下拉加载更多。花了点时间研究这个功能，以前没做过。 首先需要给div加scroll事件，监听滚动条滚动动作。那何时触发加载动作呢？当滚动条滚到底的时候。如何判断滚动条滚到底呢？  当滚动条的高度加上滚动条到div顶部的高度等于div的可滚动高度时，说明滚动条到底部了。公式如下。 1this.scrollHeight &amp;lt;= $(this).scrol">
   
     <link rel="alternative" href="/atom.xml" title="理想三旬" type="application/atom+xml">
   
@@ -46,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="null" class="js-avatar">
+			<img src="./img/1.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Bobby</a></h1>
@@ -104,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="null" class="js-avatar">
+				<img src="./img/1.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Bobby</h1>
@@ -153,136 +154,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-es6" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-下拉更多实现" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      下拉更多实现
+    </h1>
+  
+
+        
+        <a href="/2017/07/27/下拉更多实现/" class="archive-article-date">
+  	<time datetime="2017-07-27T13:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="es6属性基础教学，30分钟包会"><a href="#es6属性基础教学，30分钟包会" class="headerlink" title="es6属性基础教学，30分钟包会"></a>es6属性基础教学，30分钟包会</h1><p>ES6基础智商划重点<br>在实际开发中，ES6已经非常普及了。掌握ES6的知识变成了一种必须。尽管我们在使用时仍然需要经过babel编译。</p>
-<p>ES6彻底改变了前端的编码风格，可以说对于前端的影响非常巨大。值得高兴的是，如果你熟悉ES5，学习ES6并不需要花费太多的时间就可以掌握，因为常用的基础语法并不多，花少量的时间，就可以开始我们的ES6之旅了。</p>
-<p>这篇文章不会详细的告诉你ES6的每一个细节知识，只会根据我自己的开发经验，将我在实际开发中常常用到的知识点分享给大家，给大家学习ES6一个方向的指引。这是因为考虑到很多同学虽然知道ES6的重要性，但是不知道自己需要掌握那些ES6的知识，也不知道这些知识需要掌握到什么程度，这给新手朋友带来了许多困惑，因此这篇文章就算是一个划重点吧，掌握这些，就可以轻轻松松得进行进一步学习了。</p>
-<p>在学习之前，推荐大家使用babel官方提供的在线编译工具，编写自己的demo，会在右侧实时显示出编译之后的代码，以供参考学习 <a href="http://babeljs.io/repl/" target="_blank" rel="external">http://babeljs.io/repl/</a></p>
-<p><strong>一、新的变量声明方式 let/const</strong></p>
-<p>与var不同，新的变量声明方式带来了一些不一样的特性，其中最重要的两个特性就是提供了块级作用域与不再具备变量提升。</p>
-<p>通过2个简单的例子来说明这两点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> &#123;</div><div class="line">	<span class="keyword">let</span> a = <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// a is not defined</span></div></pre></td></tr></table></figure>
-<p>而这个简单的例子，会被编译为:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="keyword">let</span> _a = <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// a is not defined</span></div><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="keyword">let</span> a = <span class="number">20</span>;</div></pre></td></tr></table></figure>
-<p><strong>变量提升demo示例</strong><br>当然，你的代码编译成为了ES5之后，仍然会存在变量提升，因此这一点只需要我们记住即可。在实际使用中，也需要尽量避免使用变量提升的特性带来的负面影响。只有在面试题中，才会对变量提升不停的滥用。</p>
-<p>使用ES6，我们需要全面使用let/const替换var，那么什么时候用let，什么时候用const就成为了一个大家要熟练区分的一个知识点。</p>
-<p>我们常常使用let来声明一个值会被改变的变量，而使用const来声明一个值不会被改变的变量，也可以称之为常量。</p>
-<p>当值为基础数据类型时，那么这里的值，就是指值本身。<br>而当值对应的为引用数据类型时，那么我这里说的值，则表示指向该对象的引用。这里需要注意，正因为该值为一个引用，只需要保证引用不变就可以，我们仍然可以改变该引用所指向的对象。</p>
-<p>当我们试图改变const声明的变量时，则会报错。</p>
-<p>写几个例子，大家可以仔细揣摩一下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="literal">null</span>;</div><div class="line">a = <span class="number">20</span>;</div><div class="line"><span class="keyword">const</span> obDev = &#123;</div><div class="line">	<span class="attr">a</span>: <span class="number">20</span>,</div><div class="line">	<span class="attr">b</span>: <span class="number">30</span></div><div class="line">&#125;</div><div class="line">obDev.a = <span class="number">30</span>;</div><div class="line"><span class="built_in">console</span>.log(obDev); <span class="comment">// Object &#123;a: 30, b: 30&#125;</span></div><div class="line"><span class="keyword">const</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">const</span> a = obDev.a;</div></pre></td></tr></table></figure>
-<p>只要抓住上面我说的特性，那么在使用let/const时就会显得游刃有余。<br>根据我自己的经验，使用const的场景要比使用let的场景多很多。</p>
-<p><strong>二、 箭头函数的使用</strong></p>
-<p>之前我说ES6颠覆了js的编码习惯，箭头函数的使用占了很大一部分。</p>
-<p>首先是写法上的不同:</p>
-<p>es5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> a + b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>es6 箭头函数写法，当函数直接被return时，可以省略函数体的括号</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fn = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;</div></pre></td></tr></table></figure>
-<p>es5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">20</span>；</div><div class="line">	<span class="keyword">var</span> b = <span class="number">30</span>;</div><div class="line">	<span class="keyword">return</span> a + b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>es6</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">	<span class="keyword">const</span> a = <span class="number">20</span>;</div><div class="line">	<span class="keyword">const</span> b = <span class="number">30</span>;</div><div class="line">	<span class="keyword">return</span> a + b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>箭头函数可以替换函数表达式，但是不能替换函数声明<br>其次还有一个至关重要的一点，那就是箭头函数中，没有this。如果你在箭头函数中使用了this，那么该this一定就是外层的this。</p>
-<p>也正是因为箭头函数中没有this，因此我们也就无从谈起用call/apply/bind来改变this指向。记住这个特性，能让你在react组件之间传值时少走无数弯路。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">	<span class="attr">name</span>: ‘tom’,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们试图用ES6的写法来重构上面的对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> person = &#123;</div><div class="line">	<span class="attr">name</span>: ‘tom’,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.name</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>// 但是编译结果却是</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">	<span class="attr">name</span>: ‘tom’,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">undefined</span>.name;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>在ES6中，会默认采用严格模式，因此this也不会自动指向window对象了，而箭头函数本身并没有this，因此this就只能是undefined，这一点，在使用的时候，一定要慎重慎重再慎重，不然踩了坑你都不知道自己错在哪！这种情况，如果你还想用this，就不要用使用箭头函数的写法。<br>// 可以稍做改动</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> person = &#123;</div><div class="line">	<span class="attr">name</span>: ‘tom’,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.name, <span class="number">1000</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译之后变成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">	<span class="attr">name</span>: ‘tom’,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> _this = <span class="keyword">this</span>; <span class="comment">// 使用了我们在es5时常用的方式保存this引用</span></div><div class="line"> 		<span class="keyword">return</span> setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> 			<span class="keyword">return</span> _this.name;</div><div class="line">		&#125;, <span class="number">1000</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>先记住箭头函数的写法，并留意箭头函数中关于this的特殊性，更过实践与注意事项我们在封装react组件时再慢慢来感受。</p>
-<p><strong>三、模板字符串</strong></p>
-<p>模板字符串是为了解决使用+号拼接字符串的不便利而出现的。它的功能非常强大，但是我们大多数时候使用它则非常简单。看一个例子大家就明白怎么使用了。</p>
-<p> es6</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">20</span>;</div><div class="line"><span class="keyword">const</span> b = <span class="number">30</span>;</div><div class="line"><span class="keyword">const</span> string = $&#123;a&#125;+$&#123;b&#125;=$&#123;a+b&#125;;</div></pre></td></tr></table></figure>
-<p>es5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">30</span>;</div><div class="line"><span class="keyword">var</span> string = a + “+” + b + “=” + (a + b);</div></pre></td></tr></table></figure>
-<p>使用 `` 将整个字符串包裹起来，而在其中使用 ${} 来包裹一个变量或者一个表达式。</p>
-<p>当然模板字符串还支持换行等强大的功能，更多的大家可通过参考资料进一步学习。</p>
-<p><strong>四、 解析结构</strong></p>
-<p>解析结构是一种全新的写法，我们只需要使用一个例子，大家就能够明白解析结构到底是怎么一回事儿。</p>
-<p>// 首先有这么一个对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> props = &#123;</div><div class="line">	<span class="attr">className</span>: ‘tiger-button’,</div><div class="line">	<span class="attr">loading</span>: <span class="literal">false</span>,</div><div class="line">	<span class="attr">clicked</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">disabled</span>: ‘disabled’</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当我们想要取得其中的2个值：loading与clicked时：</p>
-<p>// es5</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> loading = props.loading;</div><div class="line"><span class="keyword">var</span> clicked = props.clicked;</div></pre></td></tr></table></figure>
-<p>// es6</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; loading, clicked &#125; = props;</div></pre></td></tr></table></figure>
-<p>// 给一个默认值，当props对象中找不到loading时，loading就等于该默认值<br>const { loading = false, clicked } = props;<br>是不是简单了许多？正是由于解析结构大大减少了代码量，因此它大受欢迎，在很多代码中它的影子随处可见。</p>
-<p>// 比如<br>// section1<br>import React, { Component } from ‘react’;</p>
-<p>// section2<br>export { default } from ‘./Button’;</p>
-<p>// section3<br>const { click, loading } = this.props;<br>const { isCheck } = this.state;</p>
-<p>// more 任何获取对象属性值的场景都可以使用解析结构来减少我们的代码量<br>另外，数组也有属于自己的解析结构。</p>
-<p>// es6<br>const arr = [1, 2, 3];<br>const [a, b, c] = arr;</p>
-<p>// es5<br>var arr = [1, 2, 3];<br>var a = arr[0];<br>var b = arr[1];<br>var c = arr[2];<br>数组以序列号一一对应，这是一个有序的对应关系。<br>而对象根据属性名一一对应，这是一个无序的对应关系。<br>根据这个特性，使用解析结构从对象中获取属性值更加具有可用性。</p>
-<p><strong>五、 函数默认参数</strong></p>
-<p>之前我们不能直接为函数指定默认参数，因此很多时候为了保证传入的参数具备一个默认值，我们常常使用如下的方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> x = x || <span class="number">20</span>;</div><div class="line">	<span class="keyword">var</span> y = y || <span class="number">30</span>;</div><div class="line">	<span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(add()); <span class="comment">// 50</span></div></pre></td></tr></table></figure>
-<p>这种方式并不是没有缺点，比如当我传入一个x值为false，这个时候任然会取到默认值，就不是我们的本意了。<br>来看看ES6的默认值写法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x = <span class="number">20</span>, y = <span class="number">30</span></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(add());</div></pre></td></tr></table></figure>
-<p>在实际开发中给参数添加适当的默认值，可以让我们对函数的参数类型有一个直观的认知。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const ButtonGroupProps = &#123;</div><div class="line">	size: ‘normal’,</div><div class="line">	className: ‘xxxx-button-group’,</div><div class="line">	borderColor: ‘#333’</div><div class="line">&#125;</div><div class="line">export default function ButtonGroup(props = ButtonGroupProps) &#123;</div><div class="line">… …</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>六、 展开运算符</strong></p>
-<p>在ES6中用…来表示展开运算符，它可以将数组方法或者对象进行展开。先来看一个例子它是如何使用的。</p>
-<p>const arr1 = [1, 2, 3];<br>const arr2 = […arr1, 10, 20, 30];</p>
-<p>// 这样，arr2 就变成了[1, 2, 3, 10, 20, 30];<br>当然，展开对象数据也是可以得到类似的结果</p>
-<p>const obj1 = {<br>a: 1,<br>b: 2,<br>c: 3<br>}</p>
-<p>const obj2 = {<br>…obj1,<br>d: 4,<br>e: 5,<br>f: 6<br>}</p>
-<p>// 结果类似于 const obj2 = Object.assign({}, obj1, {d: 4})<br>展开运算符还常常运用在解析结构之中，例如我们在Raect封装组件的时候常常不确定props到底还有多少数据会传进来，就会利用展开运算符来处理剩余的数据。</p>
-<p>// 这种方式在react中十分常用<br>const props = {<br>size: 1,<br>src: ‘xxxx’,<br>mode: ‘si’<br>}</p>
-<p>const { size, …others } = props;</p>
-<p>console.log(others)</p>
-<p>// 然后再利用暂开运算符传递给下一个元素，再以后封装react组件时会大量使用到这种方式，正在学习react的同学一定要搞懂这种使用方式</p>
-<p>展开运算符还用在函数的参数中，来表示函数的不定参。只有放在最后才能作为函数的不定参，否则会报错。</p>
-<p>// 所有参数之和<br>const add = (a, b, …more) =&gt; {<br>return more.reduce((m, n) =&gt; m + n) + a + b<br>}</p>
-<p>console.log(add(1, 23, 1, 2, 3, 4, 5)) // 39<br>展开运算符的运用可以大大提高我们的代码效率，但是在刚开始使用的时候比较绕脑，掌握好了用起来还是非常爽的，记住这些使用场景，平时在用的时候可以刻意多运用就行了。</p>
-<p>七、对象字面量 与 class</p>
-<p>ES6针对对象字面量做了许多简化语法的处理。</p>
-<p>当属性与值的变量同名时。<br>const name = ‘Jane’;<br>const age = 20</p>
-<p>// es6<br>const person = {<br>name,<br>age<br>}</p>
-<p>// es5<br>var person = {<br>name: name,<br>age: age<br>};<br>那么这种方式在任何地方都可以使用，比如在一个模块对外提供接口时</p>
-<p>const getName = () =&gt; person.name;<br>const getAge = () =&gt; person.age;</p>
-<p>// commonJS的方式<br>module.exports = { getName, getAge }</p>
-<p>// ES6 modules的方式<br>export default { getName, getAge }<br>除了属性之外，对象字面量写法中的方法也可以有简写方式。<br>// es6<br>const person = {<br>name,<br>age,<br>getName() { // 只要不使用箭头函数，this就还是我们熟悉的this<br>return this.name<br>}<br>}</p>
-<p>// es5<br>var person = {<br>name: name,<br>age: age,<br>getName: function getName() {<br>return this.name;<br>}<br>};<br>在对象字面量中可以使用中括号作为属性，表示属性也能是一个变量了。<br>const name = ‘Jane’;<br>const age = 20</p>
-<p>const person = {</p>
-<p>}<br>在ant-design的源码实现中，就大量使用了这种方式来拼接当前元素的className，例如:</p>
-<p>let alertCls = classNames(prefixCls, {</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[`$&#123;prefixCls&#125;-$&#123;type&#125;`]: true,</div><div class="line">[`$&#123;prefixCls&#125;-close`]: !this.state.closing,</div><div class="line">[`$&#123;prefixCls&#125;-with-description`]: !!description,</div><div class="line">[`$&#123;prefixCls&#125;-no-icon`]: !showIcon,</div><div class="line">[`$&#123;prefixCls&#125;-banner`]: !!banner,</div></pre></td></tr></table></figure>
-<p>}, className);<br>ant-design是一个认可度非常高的UI组件库，官方使用react的方式进行了实现，除此之外，还有vue也有对应的实现，有兴趣的同学可以去他们的官网了解学习。<a href="https://ant.design/index-cn" target="_blank" rel="external">https://ant.design/index-cn</a><br>class<br>ES6为我们创建对象提供了新的语法糖，这就是Class语法。如果你对ES5中面向对象的方式比较熟悉的话，Class掌握起来也是非常迅速的，因为除了写法的不同，它并不会增加新的难以理解的知识点。我们先利用一个简单的例子来看看写法的不同。</p>
-<p>// ES5<br>// 构造函数<br>function Person(name, age) {<br>this.name = name;<br>this.age = age;<br>}</p>
-<p>// 原型方法<br>Person.prototype.getName = function() {<br>return this.name<br>}</p>
-<p>// ES6<br>class Person {<br>constructor(name, age) { // 构造函数<br>this.name = name;<br>this.age = age;<br>}</p>
-<p>getName() { // 原型方法<br>return this.name<br>}<br>}<br>babel会将ES6的写法编译成为利用Object.defineProperty实现的方式，这个方法的具体用处大家可以在《JavaScript高级编程3》中学习了解，包括get，set，等都有详细的说明<br>除此之外，我们还需要特别注意在实际使用中的几种写法方式的不同，在下面的例子注释中，我说明了他们分别对应的ES5中的含义。</p>
-<p>class Person {<br>constructor(name, age) { // 构造函数<br>this.name = name;<br>this.age = age;<br>}</p>
-<p>getName() { // 这种写法表示将方法添加到原型中<br>return this.name<br>}</p>
-<p>static a = 20; // 等同于 Person.a = 20</p>
-<p>c = 20; // 表示在构造函数中添加属性 在构造函数中等同于 this.c = 20</p>
-<p>// 箭头函数的写法表示在构造函数中添加方法，在构造函数中等同于this.getAge = function() {}<br>getAge = () =&gt; this.age</p>
-<p>}<br>箭头函数需要注意的仍然是this的指向问题，因为箭头函数this指向不能被改变的特性，因此在react组件中常常利用这个特性来在不同的组件进行传值会更加方便。</p>
-<p>继承 extends<br>相比ES5，ES6的继承就要简单很多，我们直接来看一个例子。</p>
-<p>class Person {<br>constructor(name, age) {<br>this.name = name;<br>this.age = age;<br>}</p>
-<p>getName() {<br>return this.name<br>}<br>}</p>
-<p>// Student类继承Person类<br>class Student extends Person {<br>constructor(name, age, gender, classes) {<br>super(name, age);<br>this.gender = gender;<br>this.classes = classes;<br>}</p>
-<p>getGender() {<br>return this.gender;<br>}<br>}<br>我们只需要一个extends关键字，就可以实现继承了，不用像ES5那样去担心构造函数继承和原型继承，除此之外，我们还需要关注一个叫做super的方法。</p>
-<p>在继承的构造函数中，我们必须如上面的例子那么调用一次super方法，它表示构造函数的继承，与ES5中利用call/apply继承构造函数是一样的功能。</p>
-<p>// 构造函数中<br>// es6<br>super(name, age);</p>
-<p>// es5<br>Person.call(this);<br>super还可以直接调用父级的原型方法，super.getName，但是我自己从来没这样用过，也就不扩展说了。<br>继承在react中有大量的使用场景，许多组件都利用继承来创建。</p>
-<p>import React, { Component } from ‘react’;</p>
-<p>class App extends Component {</p>
-<p>defaultProps = {}<br>state = {}<br>componentWillMount() {}<br>componentDidMount() {}</p>
-<p>btnClick = e =&gt; {}</p>
-<p>render() {}<br>}<br>只要根据我们上面所学到的知识，明确的知道哪些属性方法是放在构造函数中，哪些属性方法是放到了原型中，那么我们自己在编写react组件的时候就要简单和清晰很多。</p>
-<p>其实只要我们ES5面向对象的知识足够扎实，ES6和react掌握起来也没有太多的难度，所有的学习难点，并不在ES6这些不同的语法糖上，而在于ES5中的原理，因此我在前面分享ES5的核心知识的时候，很多读者老爷都迫不及待的希望我能够更多的说一说ES6的知识。其实我们都没有必要那么着急，只要前面10多篇文章的知识足够扎实，这篇文章所涉及到的常用的ES6知识，最多花30分钟也就掌握了。这些写法上的不同并不会造成大家理解上的困难，只需要有一个熟悉过程就行了。所以大家的重点，还是要回归到基础上来。</p>
+        <a id="more"></a>
+<p>项目的一个前端页面展示已购买商品时，要求能下拉加载更多。花了点时间研究这个功能，以前没做过。</p>
+<pre><code>首先需要给div加scroll事件，监听滚动条滚动动作。那何时触发加载动作呢？当滚动条滚到底的时候。如何判断滚动条滚到底呢？
+
+当滚动条的高度加上滚动条到div顶部的高度等于div的可滚动高度时，说明滚动条到底部了。公式如下。
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.scrollHeight &lt;= $(<span class="keyword">this</span>).scrollTop() + $(<span class="keyword">this</span>).height()</div></pre></td></tr></table></figure>
+<p>给出一个能跑的demo，需要引入jquery。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE=html&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>下拉加载更多<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span> <span class="attr">style</span>=<span class="string">"height:700px;overflow:auto;"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">'border:1px solid red;margin-top:20px;color:grey;height:800px'</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">  </span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    $(<span class="string">".main"</span>).unbind(<span class="string">"scroll"</span>).bind(<span class="string">"scroll"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">        <span class="keyword">var</span> sum = <span class="keyword">this</span>.scrollHeight;  </div><div class="line">        <span class="keyword">if</span> (sum &lt;= $(<span class="keyword">this</span>).scrollTop() + $(<span class="keyword">this</span>).height()) &#123;  </div><div class="line">            $(<span class="string">".main"</span>).append($(<span class="string">".child"</span>).clone());  </div><div class="line">        &#125;  </div><div class="line">    &#125;);  </div><div class="line">&#125;);  </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p> 如果等滚动条拉到底部时再加载，会影响用户体验。因为一般动态加载的时候都需要向服务端请求资源，这时需要时间。一个更佳的方式是，当滚动条距离底部一定距离（C）时，就动态加载更多，向服务端请求资源。也就是预加载，预读取。公式如下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.scrollHeight - C &lt;= $(<span class="keyword">this</span>).scrollTop() + $(<span class="keyword">this</span>).height()</div></pre></td></tr></table></figure>
 
       
 
@@ -312,6 +213,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">下拉更多 原理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -362,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/27/es6/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/27/下拉更多实现/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -376,9 +288,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/07/27/es6s属性/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          es6s属性
+        
+      </div>
+    </a>
   
-    <a href="/2017/07/26/js/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2017/07/27/lazyload/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lazyload</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -500,6 +421,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">BOM DOM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">es6 基础 属性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">懒加载 原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jquery 选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">下拉更多 原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向对象 原型 原型链 this关键字 闭包 json字符串转换 预解析</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
