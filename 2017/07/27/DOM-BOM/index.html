@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>DOM/BOM | 理想三旬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOM替换类名123456789function replaceClassName(element,oldStr,newStr) &amp;#123;  var arr = element.className.split(&quot; &quot;);  for(var i = 0;i&amp;lt;arr.length;i++) &amp;#123;  	if(arr[i]==oldStr) &amp;#123;  		arr[i] = newS">
+  <meta name="description" content="DOM替换类名123456789function replaceClassName(element,oldStr,newStr) &amp;#123;  var arr = element.className.split(&quot; &quot;);  for(var i = 0;i&amp;lt;arr.length;i++) &amp;#123;  	if(arr[i]==oldStr) &amp;#123;  		arr[i] = new">
 <meta name="keywords" content="BOM DOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM&#x2F;BOM">
 <meta property="og:url" content="http://yoursite.com/2017/07/27/DOM-BOM/index.html">
 <meta property="og:site_name" content="理想三旬">
-<meta property="og:description" content="DOM替换类名123456789function replaceClassName(element,oldStr,newStr) &amp;#123;  var arr = element.className.split(&quot; &quot;);  for(var i = 0;i&amp;lt;arr.length;i++) &amp;#123;  	if(arr[i]==oldStr) &amp;#123;  		arr[i] = newS">
-<meta property="og:updated_time" content="2017-07-27T14:04:36.130Z">
+<meta property="og:description" content="DOM替换类名123456789function replaceClassName(element,oldStr,newStr) &amp;#123;  var arr = element.className.split(&quot; &quot;);  for(var i = 0;i&amp;lt;arr.length;i++) &amp;#123;  	if(arr[i]==oldStr) &amp;#123;  		arr[i] = new">
+<meta property="og:updated_time" content="2017-07-27T14:08:54.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM&#x2F;BOM">
-<meta name="twitter:description" content="DOM替换类名123456789function replaceClassName(element,oldStr,newStr) &amp;#123;  var arr = element.className.split(&quot; &quot;);  for(var i = 0;i&amp;lt;arr.length;i++) &amp;#123;  	if(arr[i]==oldStr) &amp;#123;  		arr[i] = newS">
+<meta name="twitter:description" content="DOM替换类名123456789function replaceClassName(element,oldStr,newStr) &amp;#123;  var arr = element.className.split(&quot; &quot;);  for(var i = 0;i&amp;lt;arr.length;i++) &amp;#123;  	if(arr[i]==oldStr) &amp;#123;  		arr[i] = new">
   
     <link rel="alternative" href="/atom.xml" title="理想三旬" type="application/atom+xml">
   
@@ -174,7 +174,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a><strong>DOM</strong></h2><h3 id="替换类名"><a href="#替换类名" class="headerlink" title="替换类名"></a>替换类名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceClassName</span>(<span class="params">element,oldStr,newStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr = element.className.split(<span class="string">" "</span>);</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++) &#123;</div><div class="line">  	<span class="keyword">if</span>(arr[i]==oldStr) &#123;</div><div class="line">  		arr[i] = newStr;</div><div class="line">	&#125;</div><div class="line">  &#125;</div><div class="line">  element.className = arr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <a id="more"></a>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a><strong>DOM</strong></h2><h3 id="替换类名"><a href="#替换类名" class="headerlink" title="替换类名"></a>替换类名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceClassName</span>(<span class="params">element,oldStr,newStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr = element.className.split(<span class="string">" "</span>);</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++) &#123;</div><div class="line">  	<span class="keyword">if</span>(arr[i]==oldStr) &#123;</div><div class="line">  		arr[i] = newStr;</div><div class="line">	&#125;</div><div class="line">  &#125;</div><div class="line">  element.className = arr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="类名获取元素兼容性处理"><a href="#类名获取元素兼容性处理" class="headerlink" title="类名获取元素兼容性处理"></a>类名获取元素兼容性处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getElementsByClassName</span>(<span class="params">element,className</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(element.getElementsByClassName) &#123;</div><div class="line">    <span class="keyword">return</span> element.getElementsByClassName(className);</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">var</span> elements = element.getElementsByTagName(<span class="string">"*"</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;elements.length;i++) &#123;</div><div class="line">      <span class="keyword">var</span> arr1 = elements[i].className.split(<span class="string">" "</span>);</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j =<span class="number">0</span>;j&lt;arr.length;j++) &#123;</div><div class="line">        <span class="keyword">if</span>(arr1[j]==className) &#123;</div><div class="line">          arr.push(arr1[j]);</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h3><p>addEventLister   在IE8以下不兼容<br>attachEvent       仅支持IE8以下浏览器</p>
 <ul>
@@ -420,6 +421,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jquery 选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">es6 基础 属性</a>
               </li>
              
@@ -428,15 +433,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jquery 选择器</a>
+                <a href="javascript:void(0)" class="js-tag color2">面向对象 原型 原型链 this关键字 闭包 json字符串转换 预解析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">下拉更多 原理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向对象 原型 原型链 this关键字 闭包 json字符串转换 预解析</a>
               </li>
             
             <div class="clearfix"></div>
