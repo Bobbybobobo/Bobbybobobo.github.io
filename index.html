@@ -171,20 +171,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a><strong>DOM</strong></h2><h3 id="替换类名"><a href="#替换类名" class="headerlink" title="替换类名"></a>替换类名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceClassName</span>(<span class="params">element,oldStr,newStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr = element.className.split(<span class="string">" "</span>);</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++) &#123;</div><div class="line">  	<span class="keyword">if</span>(arr[i]==oldStr) &#123;</div><div class="line">  		arr[i] = newStr;</div><div class="line">	&#125;</div><div class="line">  &#125;</div><div class="line">  element.className = arr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="类名获取元素兼容性处理"><a href="#类名获取元素兼容性处理" class="headerlink" title="类名获取元素兼容性处理"></a>类名获取元素兼容性处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getElementsByClassName</span>(<span class="params">element,className</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(element.getElementsByClassName) &#123;</div><div class="line">    <span class="keyword">return</span> element.getElementsByClassName(className);</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">var</span> elements = element.getElementsByTagName(<span class="string">"*"</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;elements.length;i++) &#123;</div><div class="line">      <span class="keyword">var</span> arr1 = elements[i].className.split(<span class="string">" "</span>);</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j =<span class="number">0</span>;j&lt;arr.length;j++) &#123;</div><div class="line">        <span class="keyword">if</span>(arr1[j]==className) &#123;</div><div class="line">          arr.push(arr1[j]);</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h3><p>addEventLister   在IE8以下不兼容<br>attachEvent       仅支持IE8以下浏览器</p>
-<ul>
-<li><h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a><strong>BOM</strong></h2></li>
-</ul>
-<p><strong>window</strong>  对象   定时器回调函数是被window调用的<br>window.onload  加载完成事件 指加载完成，指的是页面所有资源都加载完成，涉及到图片内容的一定要写在onload里面<br>window.close   关闭当前窗口</p>
-<p><strong>location</strong>  对象<br>location.hash    锚点<br>location.href    要跳转的地址<br>location.reload()  让页面重新加载<br>location.host  服务器</p>
-<p><strong>history</strong>  对象history.back();  //后退history.forward(); //前进history.go()  </p>
-<p><strong>screen</strong>   屏幕对象 screen.width   //屏幕宽度screen.height  //屏幕高度screen.availWidth //可用宽度 </p>
-<p><strong>date</strong>    日期对象var date = +new Date();  //转换成13位数字</p>
-<p>Date.now();  //返回值为13位数字<br>date.toString(); //中国标准时间</p>
-
+        <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a><strong>DOM</strong></h2>
+        
+          <a class="article-more-a" href="/2017/07/27/DOM-BOM/#more">more >></a>
+        
       
 
       
@@ -474,7 +464,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/27/下拉更多实现/">下拉更多实现</a>
+      <a class="article-title" href="/2017/07/27/下拉更多实现/">下拉更多</a>
     </h1>
   
 
@@ -487,17 +477,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>项目的一个前端页面展示已购买商品时，要求能下拉加载更多。花了点时间研究这个功能，以前没做过。</p>
-<pre><code>首先需要给div加scroll事件，监听滚动条滚动动作。那何时触发加载动作呢？当滚动条滚到底的时候。如何判断滚动条滚到底呢？
-
-当滚动条的高度加上滚动条到div顶部的高度等于div的可滚动高度时，说明滚动条到底部了。公式如下。
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.scrollHeight &lt;= $(<span class="keyword">this</span>).scrollTop() + $(<span class="keyword">this</span>).height()</div></pre></td></tr></table></figure>
-<p>给出一个能跑的demo，需要引入jquery。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE=html&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>下拉加载更多<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span> <span class="attr">style</span>=<span class="string">"height:700px;overflow:auto;"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">'border:1px solid red;margin-top:20px;color:grey;height:800px'</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">  </span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    $(<span class="string">".main"</span>).unbind(<span class="string">"scroll"</span>).bind(<span class="string">"scroll"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">        <span class="keyword">var</span> sum = <span class="keyword">this</span>.scrollHeight;  </div><div class="line">        <span class="keyword">if</span> (sum &lt;= $(<span class="keyword">this</span>).scrollTop() + $(<span class="keyword">this</span>).height()) &#123;  </div><div class="line">            $(<span class="string">".main"</span>).append($(<span class="string">".child"</span>).clone());  </div><div class="line">        &#125;  </div><div class="line">    &#125;);  </div><div class="line">&#125;);  </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p> 如果等滚动条拉到底部时再加载，会影响用户体验。因为一般动态加载的时候都需要向服务端请求资源，这时需要时间。一个更佳的方式是，当滚动条距离底部一定距离（C）时，就动态加载更多，向服务端请求资源。也就是预加载，预读取。公式如下。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.scrollHeight - C &lt;= $(<span class="keyword">this</span>).scrollTop() + $(<span class="keyword">this</span>).height()</div></pre></td></tr></table></figure>
-
+        <h2 id="下拉更多功能实现"><a href="#下拉更多功能实现" class="headerlink" title="下拉更多功能实现"></a><strong>下拉更多功能实现</strong></h2>
+        
+          <a class="article-more-a" href="/2017/07/27/下拉更多实现/#more">more >></a>
+        
       
 
       
@@ -723,10 +706,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">BOM DOM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">jquery 选择器</a>
               </li>
              
@@ -740,6 +719,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象 原型 原型链 this关键字 闭包 json字符串转换 预解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">BOM DOM</a>
               </li>
             
             <div class="clearfix"></div>
