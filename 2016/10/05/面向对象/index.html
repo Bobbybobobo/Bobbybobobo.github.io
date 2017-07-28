@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 理想三旬</title>
+  <title>面向对象 | 理想三旬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="理想三旬">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="面向对象">
+<meta name="keywords" content="面向对象,原型,原型链,this关键字,闭包,json字符串转换,预解析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象">
+<meta property="og:url" content="http://yoursite.com/2016/10/05/面向对象/index.html">
 <meta property="og:site_name" content="理想三旬">
+<meta property="og:description" content="面向对象">
+<meta property="og:updated_time" content="2017-07-28T13:46:16.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理想三旬">
+<meta name="twitter:title" content="面向对象">
+<meta name="twitter:description" content="面向对象">
   
     <link rel="alternative" href="/atom.xml" title="理想三旬" type="application/atom+xml">
   
@@ -149,110 +154,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-面向对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/06/es6s属性/" class="archive-article-date">
-  	<time datetime="2017-06-06T13:37:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/06/es6s属性/">es6s属性</a>
+    <h1 class="article-title" itemprop="name">
+      面向对象
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/10/05/面向对象/" class="archive-article-date">
+  	<time datetime="2016-10-05T09:55:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2></li>
+</ul>
+<a id="more"></a>
+<p>js是基于对象的多范式编程语言</p>
+<h3 id="多范式指风格"><a href="#多范式指风格" class="headerlink" title="多范式指风格"></a>多范式指风格</h3><p>既可以面向对象的方式编程<br>又可以面向过程的方式编程<br>也可以以函数式的方式编程</p>
+<p>函数式的特点：递归、链式<br>jquery就是链式编程风格</p>
+<h3 id="对象的动态特性"><a href="#对象的动态特性" class="headerlink" title="对象的动态特性"></a>对象的动态特性</h3><p>动态的为对象添加属性</p>
+<h3 id="为什么使用原型"><a href="#为什么使用原型" class="headerlink" title="为什么使用原型"></a>为什么使用原型</h3><p>减少内存的浪费，提升效率，使代码更加安全<br>基于原型的继承方式，实现了代码的复用</p>
+<h3 id="彻底了解原型链"><a href="#彻底了解原型链" class="headerlink" title="彻底了解原型链"></a>彻底了解原型链</h3><p>每个由构造器创建的对象拥有一个指向构造器prototype属性值的隐式引用</p>
+<h3 id="json字符串转化成对象"><a href="#json字符串转化成对象" class="headerlink" title="json字符串转化成对象"></a>json字符串转化成对象</h3><p>1.eval(“(“+data+”)”);将json中的｛｝看作代码块的执行与结束，因此加上（）;<br>2.json.parse();低版本可能存在不兼容问题<br>3.var o2 = (new Function(){“return”+data })()</p>
+<h3 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h3><p>作为函数使用时，this指向window全局对象严格模式下指向undefined<br>函数作为对象方法被调用时,this指向调用该方法的对象<br>构造函数中 this指向new出的实例对象</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包维护对外部函数中局部变量，arguments和函数声明的访问，通俗来讲，闭包就是封闭隔离的区域空间，在js中，函数所构成的外部无法访问的区域。<br>闭包的本质：利用作用域访问规则的不可逆性，构成一个单项的空间。</p>
+<h3 id="为什么使用闭包？"><a href="#为什么使用闭包？" class="headerlink" title="为什么使用闭包？"></a>为什么使用闭包？</h3><p>因为一些数据似乎比较敏感的，会有安全的需求，不能让用户得到，所以将他们直接放到闭包里，让用户更加安全的访问<br>闭包的核心就是带有私有数据的函数、对象<br>视情况提供访问数据的通道</p>
+<p>闭包的应用即沙箱模式（自调用的函数）我们写在这个函数里面的变量不会被外部的内容所影响到，这样代码可以正常使用和运行，也使数据更加安全。</p>
+<p>js中信息隐藏是靠闭包实现的</p>
+<h3 id="代码预解析"><a href="#代码预解析" class="headerlink" title="代码预解析"></a>代码预解析</h3><p>在执行代码之前先把代码解释分析一遍，处理一些核心问题，为了提高效率，提前的翻译解释，在代码执行之前的一个解释。</p>
+<h3 id="作用域、作用域链"><a href="#作用域、作用域链" class="headerlink" title="作用域、作用域链"></a>作用域、作用域链</h3><p>作用域指变量可以使用到不能使用的范围<br>块级作用域即｛｝  作用域链是用来做变量查找的</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原型</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">属性</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">原型链</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">this关键字</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闭包</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">json字符串转换</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">预解析</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/10/05/面向对象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/20/下拉更多实现/" class="archive-article-date">
-  	<time datetime="2017-01-20T05:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/01/20/下拉更多实现/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          下拉更多
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/21/lazyload/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lazyload</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/20/下拉更多实现/">下拉更多</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">下拉更多</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-number">1.</span> <span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多范式指风格"><span class="toc-number">1.1.</span> <span class="toc-text">多范式指风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的动态特性"><span class="toc-number">1.2.</span> <span class="toc-text">对象的动态特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用原型"><span class="toc-number">1.3.</span> <span class="toc-text">为什么使用原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#彻底了解原型链"><span class="toc-number">1.4.</span> <span class="toc-text">彻底了解原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json字符串转化成对象"><span class="toc-number">1.5.</span> <span class="toc-text">json字符串转化成对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-关键字"><span class="toc-number">1.6.</span> <span class="toc-text">this 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-number">1.7.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用闭包？"><span class="toc-number">1.8.</span> <span class="toc-text">为什么使用闭包？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码预解析"><span class="toc-number">1.9.</span> <span class="toc-text">代码预解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域、作用域链"><span class="toc-number">1.10.</span> <span class="toc-text">作用域、作用域链</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2016/10/05/面向对象/", 
+    sourceId: "面向对象",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+  <div id="SOHUCS" sid="面向对象" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "true"; 
+var conf = "true"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -275,8 +418,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
